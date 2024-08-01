@@ -1,25 +1,43 @@
-const back=document.getElementById('back')
-const side=document.getElementById('side')
-const barBack=document.getElementById('bar-back')
+const toggleButton=document.getElementById('toggleButton')
+
+const toggle=document.getElementById('toggle')
+
+const sidebar=document.getElementById('sidebar')
+
+const read=document.getElementById('read')
+const readval=document.getElementById('readval')
 
 
-back.addEventListener('click',()=>{
+read.addEventListener('click',()=>{
 
-    console.log('hii',side.className)
-    if(side.className =='side-bar'){
-        side.className='toggle'
-        barBack.className='bar-tog'
+    console.log('kk')
+
+    if(readval.className=='read-more'){
+        readval.classList.remove('read-more')
+        read.innerText='READ LESS'
     }
     else{
-        side.className='side-bar'
+        readval.classList.add('read-more')
+        read.innerText='READ MORE'
     }
+
+   
 })
 
-barBack.addEventListener('click',()=>{
+toggle.addEventListener('click',()=>{
 
-    if(side.className =='toggle'){
-        side.className='side-bar'
-        barBack.className='bar-toggle'
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-300px"; // Move sidebar out of view
+      }else{
+        sidebar.style.left = "0px";
+      }
+
+})
+
+toggleButton.addEventListener('click',()=>{
+
+    if(sidebar.style.left==='-300px'){
+        sidebar.style.left = "0px";
     }
 
 })
